@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nóng - VNAR NEWS</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+    <header class="top-bar">
+        <a href="home.html" class="logo-link">
+            <div class="logo-area">
+                <span class="logo-main">VNAR NEWS</span>
+                <span class="logo-sub">Trang thông tin truyền thông</span>
+            </div>
+        </a>
+        <div class="search-area">
+            <input type="text" placeholder="Nhập nội dung tìm kiếm">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="right-actions">
+            <div class="user-menu">
+                <button class="icon-btn user-menu-toggle" aria-label="Tài khoản">👤</button>
+                <div class="user-menu-dropdown" id="user-menu-dropdown">
+                    <button class="user-menu-item" id="logout-btn">Đăng xuất</button>
+                </div>
+            </div>
+            <button class="icon-btn">☷</button>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="home.html" class="nav-item">Trang chủ</a>
+        <a href="news-hot.html" class="nav-item active">Nóng</a>
+        <a href="news-latest.html" class="nav-item">Mới</a>
+        <a href="news-video.html" class="nav-item">Video</a>
+        <a href="news-topic.html" class="nav-item">Chủ đề</a>
+    </nav>
+
+    <main class="content">
+        <section class="hero">
+            <h1>Tin nóng</h1>
+            <p>Khu vực hiển thị những bản tin được quan tâm nhiều nhất.</p>
+        </section>
+    </main>
+    <script src="news.js"></script>
+</body>
+</html>
+

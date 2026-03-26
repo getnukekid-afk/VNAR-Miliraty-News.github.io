@@ -1,0 +1,9 @@
+[
+  {
+    "id": "default-admin-1",
+    "username": "vnaradmin",
+    "email": "admin@example.com",
+    "passwordHash": "68e3a79c237f1ba4aa89d754158a647c965d38ced3727e857b7d0570fa01556a",
+    "createdAt": "2026-02-23T00:00:00.000Z"
+  }
+]

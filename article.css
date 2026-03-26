@@ -1,0 +1,129 @@
+.article-page {
+    padding: 18px 32px;
+    background: #f3f4f6;
+    min-height: calc(100vh - 56px);
+}
+
+.article {
+    max-width: 780px;
+    margin: 0 auto 24px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.article-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.article-content {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #111827;
+}
+
+.article-media {
+    margin-top: 14px;
+}
+
+.article-media img,
+.article-media video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.article-signature {
+    margin-top: 14px;
+    text-align: right;
+}
+
+.article-signature img {
+    max-width: 220px;
+}
+
+.comments-section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 16px 20px 24px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.comments-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #b91c1c;
+    padding-bottom: 4px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+}
+
+.comment-form textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.comment-form button {
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(90deg, #dc2626, #f59e0b);
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.comment-list {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comment-item {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #f9fafb;
+}
+
+.comment-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.comment-content {
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.no-comment {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+

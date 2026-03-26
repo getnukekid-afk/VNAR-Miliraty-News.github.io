@@ -1,0 +1,279 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(135deg, rgba(26, 42, 108, 0.7), rgba(178, 31, 31, 0.7), rgba(253, 187, 45, 0.7)),
+        url("background.png");
+    background-size: 300% 300%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: bgMove 15s infinite alternate ease-in-out;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 480px;
+    padding: 24px 20px 28px;
+    border-radius: 18px;
+    background: rgba(10, 10, 20, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+    color: #f9fafb;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 180deg,
+        #ff6b6b,
+        #f7d06b,
+        #4ade80,
+        #38bdf8,
+        #a855f7,
+        #ff6b6b
+    );
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.7;
+    animation: borderSpin 10s linear infinite;
+    pointer-events: none;
+}
+
+.logo-title {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(30, 64, 175, 0.85);
+    color: #e5e7eb;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.8);
+}
+
+.tab-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #f97316, #e11d48, #22c55e, #3b82f6);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.tab-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.tab-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.9);
+}
+
+.tab-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.8);
+}
+
+.tab-btn.active {
+    background: transparent;
+    color: #f9fafb;
+}
+
+.tab-btn.active::before {
+    opacity: 1;
+}
+
+.panel {
+    display: none;
+    margin-top: 6px;
+    padding: 12px 10px 2px;
+    border-radius: 14px;
+    background: radial-gradient(circle at top, rgba(148, 163, 184, 0.2), transparent 55%);
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel h2 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #e5e7eb;
+}
+
+.auth-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.auth-table td {
+    padding: 6px 4px;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.auth-table tr:hover td {
+    background: radial-gradient(circle at left, rgba(56, 189, 248, 0.18), transparent 55%);
+    transition: background 0.25s ease;
+}
+
+.auth-table input[type="text"],
+.auth-table input[type="password"],
+.auth-table input[type="email"] {
+    width: 100%;
+    padding: 7px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.85);
+    color: #e5e7eb;
+    outline: none;
+    font-size: 0.9rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        transform 0.12s ease;
+}
+
+.auth-table input::placeholder {
+    color: rgba(156, 163, 175, 0.75);
+}
+
+.auth-table input:focus {
+    border-color: transparent;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), rgba(76, 29, 149, 0.65));
+    box-shadow:
+        0 0 0 1px rgba(248, 250, 252, 0.8),
+        0 0 18px rgba(56, 189, 248, 0.9),
+        0 0 28px rgba(244, 114, 182, 0.9);
+    transform: translateY(-1px);
+}
+
+.auth-table input:focus::placeholder {
+    color: rgba(209, 213, 219, 0.95);
+}
+
+.primary-btn {
+    min-width: 150px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #f97316, #ec4899, #22c55e, #3b82f6);
+    background-size: 200% 100%;
+    color: #0b1120;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background-position 0.3s ease,
+        filter 0.16s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    background-position: 100% 0;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+    filter: brightness(1.03);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.9);
+}
+
+.message {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-height: 18px;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes borderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
